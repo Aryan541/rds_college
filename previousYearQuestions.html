@@ -1,0 +1,50 @@
+{% extends "base.html"%}
+{%block scale%}0.80{%endblock scale%}
+{%block title%} Previous Year Question - BCA RDS College, Muzaffarpur {%endblock title%}
+{%block description%}Previous Year Questions of BCA exam of BRABU{% endblock description%}
+{%block keywords%}Previous Year Questions of BCA, Previous year questions of BRABU, RDS College BCA Department Previous year questions, previous year questions, last year questions, BRABU previous year questions, BCA Questions, Previous year exam questions, all subject previous year questions of BCA, Previous Year Question of BCA exam conducted by BRABU, BRABU BCA previous year question, RDS College BCA Previous Year Questions, LN Mishra Muzaffarpur BCA Previous Year Questions, Vaishali Institute BCA Previous Year Questions{%endblock keywords%}
+{%block css%} <link rel="stylesheet" href="{{url_for("static", filename="css/previous-year-questions.css")}}"> {%endblock css%}
+
+{% block body%}
+{%block script%}<script src="../static/js/previous-year-questions.js"> </script>{%endblock script%}
+
+<!---Page Heading-->
+<div class="main wrapper clearfix data" style="padding-top:0%;margin-top:0%;color:bold black;">
+      <p class="text-center fs-2 text fw-bolder">PREVIOUS YEAR QUESTIONS</p>
+
+      <form>
+
+            <!-- semester -->
+            <select class="form-select" aria-label="Default select example" name="semester" id="semester" required style="margin-bottom: 0.8%;">
+                <option selected value="">Select Semester</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">5th</option>
+            </select>         
+
+            <!-- source -->
+            <select class="form-select" aria-label="Default select example" name="source" id="source" required="true">
+                <option selected value="brabu">Select Source</option>
+                <option value="brabu">BRABU Official (Default)</option>
+                <option value="vaishali">Vaishali Institute, Muzaffarpur (Part of BRABU)</option>
+                <option value="lnMishra">L.N. Mishra, Muzaffarpur (Part of BRABU)</option>
+                <option value="all">All (Recommended)</option>
+            </select>
+
+            <!-- Submit Button -->
+            <div class="col-auto" style="margin-top:1%;">
+                <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+            </div>
+        </form>
+        
+        <center>
+            <img src="{{url_for("static", filename="gif/ball.svg")}}" alt="Loading..." id="loading-svg" style="display:none;">
+        </center>
+        
+        <div id="previous-year-questions-container">
+        </div>
+</div>
+
+{%endblock body%}
